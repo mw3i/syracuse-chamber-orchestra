@@ -39,8 +39,7 @@ export default function SupportPage() {
         </h2>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-charcoal/80">
           The Syracuse Chamber Orchestra is a non-profit organization dedicated
-          to enriching the cultural life of Central New York. Donations help
-          cover concert costs, venue fees, and music materials.
+          to enriching the cultural life of Central New York.
         </p>
 
         {org.donationUrl ? (
