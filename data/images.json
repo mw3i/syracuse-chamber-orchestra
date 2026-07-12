@@ -2,7 +2,7 @@
   "placeholder": "/placeholder.png",
   "hero-home": "/videos/heroes/home.mp4",
   "hero-about": "/photos/heroes/about.webp",
-  "hero-musicians": "/photos/heroes/musicians.png",
+  "hero-musicians": null,
   "hero-events": "/photos/heroes/events.webp",
   "hero-support": null,
   "hero-media": null,
