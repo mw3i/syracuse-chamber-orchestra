@@ -26,6 +26,14 @@ export function getConductor(): Musician {
   return rosterData.conductor as Musician;
 }
 
+export function getConductorSlug(): string {
+  return rosterData.conductor.slug;
+}
+
+export function getAllMusicianSlugs(): string[] {
+  return [getConductorSlug()];
+}
+
 export function getRosterSections(): RosterSection[] {
   return rosterData.sections;
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import { ConductorProfile } from "@/components/ConductorProfile";
+import { RosterGroup } from "@/components/MusicianCard";
 import { HeroRow } from "@/components/HeroRow";
-import { MusicianCard } from "@/components/MusicianCard";
 import { SolidSection } from "@/components/SolidSection";
 import { getConductor, getRosterSections } from "@/lib/data";
 import { createPageMetadata } from "@/lib/site";
@@ -35,23 +35,24 @@ export default function MusiciansPage() {
         </p>
       </HeroRow>
 
-      <SolidSection>
-        <p className="section-label">Conductor</p>
-        <h2 className="prose-heading mt-4 text-4xl md:text-5xl">Music Director</h2>
-        <ConductorProfile conductor={conductor} />
+      <SolidSection variant="dark">
+        <h2 className="prose-heading text-3xl text-gold md:text-4xl">Conductor</h2>
+        <ConductorProfile conductor={conductor} compact variant="dark" />
       </SolidSection>
 
-      {sections.map((section, index) => (
-        <SolidSection key={section.id} variant={index % 2 === 0 ? "dark" : "light"}>
-          <p className="section-label">{section.name}</p>
-          <h2 className="prose-heading mt-4 text-4xl md:text-5xl">{section.name}</h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {section.musicians.map((musician) => (
-              <MusicianCard key={musician.slug} musician={musician} />
-            ))}
-          </div>
-        </SolidSection>
-      ))}
+      <SolidSection>
+        <h2 className="prose-heading text-3xl text-gold md:text-4xl">Musicians</h2>
+        <div className="mt-10 space-y-12 md:space-y-14">
+          {sections.map((section) => (
+            <RosterGroup
+              key={section.id}
+              name={section.name}
+              musicians={section.musicians}
+              variant="light"
+            />
+          ))}
+        </div>
+      </SolidSection>
     </>
   );
 }

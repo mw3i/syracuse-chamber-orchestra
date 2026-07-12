@@ -11,6 +11,8 @@ interface HeroRowProps {
   children: ReactNode;
   align?: "center" | "start";
   minHeight?: "medium" | "large";
+  overlay?: "default" | "medium" | "moderate" | "clear";
+  textContrast?: "default" | "strong";
 }
 
 export function HeroRow({
@@ -19,6 +21,8 @@ export function HeroRow({
   children,
   align = "center",
   minHeight = "large",
+  overlay = "default",
+  textContrast = "default",
 }: HeroRowProps) {
   const imageSrc = getImage(imageKey);
   const alignment =
@@ -29,9 +33,11 @@ export function HeroRow({
     minHeight === "large"
       ? "min-h-[72vh] md:min-h-[85vh]"
       : "min-h-[50vh] md:min-h-[55vh]";
+  const contentClass =
+    textContrast === "strong" ? "hero-text-strong" : undefined;
 
   return (
-    <section className={`relative ${height} overflow-hidden`}>
+    <section className={`relative ${height} overflow-hidden ${contentClass ?? ""}`}>
       <div
         aria-hidden={alt ? undefined : true}
         role={alt ? "img" : undefined}
@@ -39,7 +45,24 @@ export function HeroRow({
         className="hero-background absolute inset-0 scale-105 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${imageSrc})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/55 to-navy/80" />
+      {overlay === "default" && (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/70 to-navy/90" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,26,46,0.35)_100%)]" />
+        </>
+      )}
+      {overlay === "medium" && (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/72 via-navy/58 to-navy/78" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,26,46,0.28)_100%)]" />
+        </>
+      )}
+      {overlay === "moderate" && (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/35 via-navy/28 to-navy/40" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,26,46,0.14)_100%)]" />
+        </>
+      )}
       <Container
         className={`relative z-10 flex h-full ${height} flex-col justify-center py-16 md:py-20 ${alignment}`}
       >

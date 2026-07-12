@@ -22,12 +22,17 @@ export default function Home() {
 
   return (
     <>
-      <HeroRow imageKey="hero-home" alt="Syracuse Chamber Orchestra">
+      <HeroRow
+        imageKey="hero-home"
+        alt="Syracuse Chamber Orchestra"
+        overlay="moderate"
+        textContrast="strong"
+      >
         <p className="section-label">Syracuse, New York</p>
         <h1 className="prose-heading mt-4 max-w-3xl text-4xl leading-tight text-cream sm:text-5xl md:text-7xl">
           {org.name}
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream/85 md:text-xl">
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream md:text-xl">
           {org.tagline}
         </p>
       </HeroRow>
@@ -47,6 +52,7 @@ export default function Home() {
         alt="Upcoming concerts"
         minHeight="medium"
         align="start"
+        overlay="medium"
       >
         <p className="section-label">Upcoming</p>
         <h2 className="prose-heading mt-4 max-w-2xl text-4xl leading-tight text-cream md:text-5xl">

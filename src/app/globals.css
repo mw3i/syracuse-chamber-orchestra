@@ -86,6 +86,33 @@ body {
   }
 }
 
+section:has(.hero-background) :is(h1, h2, h3, p, .section-label, .prose-heading) {
+  text-shadow:
+    0 2px 18px rgba(15, 26, 46, 0.9),
+    0 1px 4px rgba(15, 26, 46, 0.75);
+}
+
+section:has(.hero-background) .section-label {
+  text-shadow:
+    0 1px 10px rgba(15, 26, 46, 0.85),
+    0 1px 3px rgba(15, 26, 46, 0.65);
+}
+
+section.hero-text-strong:has(.hero-background)
+  :is(h1, h2, h3, p, .section-label, .prose-heading) {
+  text-shadow:
+    0 2px 24px rgba(15, 26, 46, 0.95),
+    0 2px 8px rgba(15, 26, 46, 0.9),
+    0 0 2px rgba(15, 26, 46, 1);
+}
+
+section.hero-text-strong:has(.hero-background) .section-label {
+  text-shadow:
+    0 1px 12px rgba(15, 26, 46, 0.95),
+    0 1px 4px rgba(15, 26, 46, 0.85),
+    0 0 1px rgba(15, 26, 46, 0.9);
+}
+
 .hero-background {
   background-attachment: scroll;
 }

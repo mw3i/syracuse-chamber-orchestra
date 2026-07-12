@@ -41,6 +41,7 @@ export interface Musician {
   role?: string;
   image: ImageKey;
   bio?: string;
+  bioSummary?: string;
   bioParagraphs?: string[];
 }
 

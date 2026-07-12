@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { getAllMusicianSlugs } from "@/lib/data";
 import { absoluteUrl } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -15,7 +16,11 @@ const staticPaths = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return staticPaths.map((path) => ({
+  const musicianPaths = getAllMusicianSlugs().map(
+    (slug) => `/musicians/${slug}`,
+  );
+
+  return [...staticPaths, ...musicianPaths].map((path) => ({
     url: absoluteUrl(path),
     lastModified: new Date(),
     changeFrequency: path === "/" ? "weekly" : "monthly",

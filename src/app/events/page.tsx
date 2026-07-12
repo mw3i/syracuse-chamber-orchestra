@@ -24,6 +24,7 @@ export default function EventsPage() {
         alt="Syracuse Chamber Orchestra concerts"
         align="start"
         minHeight="medium"
+        overlay="medium"
       >
         <p className="section-label">Events</p>
         <h1 className="prose-heading mt-4 max-w-3xl text-5xl leading-tight text-cream md:text-6xl">
