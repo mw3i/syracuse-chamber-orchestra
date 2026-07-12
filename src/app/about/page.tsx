@@ -28,7 +28,7 @@ export default function AboutPage() {
       <SolidSection>
         <p className="section-label">Mission</p>
         <h2 className="prose-heading mt-4 max-w-3xl text-4xl md:text-5xl">
-          Why we perform
+          Our mission
         </h2>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-charcoal/80">
           {org.mission}
