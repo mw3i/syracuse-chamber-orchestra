@@ -51,6 +51,9 @@ export default async function MusicianPage({ params }: MusicianPageProps) {
   }
 
   const { musician, section } = result;
+  const profileText =
+    musician.bio ??
+    `${musician.name} performs with the Syracuse Chamber Orchestra in the ${section.name} section${musician.role ? ` as ${musician.role}` : ""}.`;
 
   return (
     <>
@@ -86,11 +89,7 @@ export default async function MusicianPage({ params }: MusicianPageProps) {
           <div>
             <p className="section-label">Profile</p>
             <h2 className="prose-heading mt-4 text-4xl">{musician.name}</h2>
-            <p className="mt-4 text-lg text-charcoal/75">
-              {musician.name} performs with the Syracuse Chamber Orchestra in the{" "}
-              {section.name} section
-              {musician.role ? ` as ${musician.role}` : ""}.
-            </p>
+            <p className="mt-4 text-lg text-charcoal/75">{profileText}</p>
             <Link
               href="/musicians"
               className="mt-8 inline-block text-sm font-semibold uppercase tracking-wider text-gold hover:text-charcoal"

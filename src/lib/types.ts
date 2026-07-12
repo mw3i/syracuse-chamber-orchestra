@@ -40,6 +40,7 @@ export interface Musician {
   name: string;
   role?: string;
   image: ImageKey;
+  bio?: string;
 }
 
 export interface RosterSection {
@@ -49,6 +50,7 @@ export interface RosterSection {
 }
 
 export interface Roster {
+  conductor: Musician;
   sections: RosterSection[];
 }
 

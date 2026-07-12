@@ -22,6 +22,10 @@ export function getRoster(): Roster {
   return rosterData as Roster;
 }
 
+export function getConductor(): Musician {
+  return rosterData.conductor as Musician;
+}
+
 export function getRosterSections(): RosterSection[] {
   return rosterData.sections;
 }
@@ -31,12 +35,27 @@ export function getAllMusicians(): Musician[] {
 }
 
 export function getMusicianBySlug(slug: string): Musician | undefined {
+  if (rosterData.conductor.slug === slug) {
+    return rosterData.conductor as Musician;
+  }
+
   return getAllMusicians().find((musician) => musician.slug === slug);
 }
 
 export function getMusicianWithSection(
   slug: string,
 ): { musician: Musician; section: RosterSection } | undefined {
+  if (rosterData.conductor.slug === slug) {
+    return {
+      musician: rosterData.conductor as Musician,
+      section: {
+        id: "conductor",
+        name: "Conductor",
+        musicians: [],
+      },
+    };
+  }
+
   for (const section of rosterData.sections) {
     const musician = section.musicians.find((item) => item.slug === slug);
     if (musician) {
@@ -46,7 +65,7 @@ export function getMusicianWithSection(
 }
 
 export function getAllMusicianSlugs(): string[] {
-  return getAllMusicians().map((musician) => musician.slug);
+  return [rosterData.conductor.slug];
 }
 
 export function getConcerts(): Concert[] {
