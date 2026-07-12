@@ -18,12 +18,14 @@ export function ConcertCard({ concert, variant = "past" }: ConcertCardProps) {
     <article
       className={`rounded border p-6 ${
         isUpcoming
-          ? "border-gold/40 bg-cream"
-          : "border-charcoal/10 bg-white"
+          ? "border-gold/40 bg-cream text-charcoal"
+          : "border-charcoal/10 bg-white text-charcoal"
       }`}
     >
       <p className="section-label">{isUpcoming ? "Upcoming" : "Past Concert"}</p>
-      <h3 className="prose-heading mt-3 text-3xl leading-tight">{concert.title}</h3>
+      <h3 className="prose-heading mt-3 text-3xl leading-tight text-charcoal">
+        {concert.title}
+      </h3>
       <p className="mt-3 text-sm uppercase tracking-wider text-charcoal/60">
         {formatConcertDate(concert.startAt)} · {formatConcertTime(concert.startAt)}
       </p>
