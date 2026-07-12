@@ -24,10 +24,25 @@
   --font-body: var(--font-source-sans);
 }
 
+html {
+  min-height: 100%;
+  background-color: var(--color-navy);
+}
+
 body {
-  background: var(--color-background);
+  min-height: 100%;
+  background-color: var(--color-navy);
   color: var(--color-foreground);
   font-family: var(--font-body), system-ui, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -9999;
+  background-color: var(--color-navy);
+  pointer-events: none;
 }
 
 .font-display {
@@ -115,12 +130,4 @@ section.hero-text-strong:has(.hero-background) .section-label {
 
 .hero-background {
   background-attachment: scroll;
-}
-
-@media (min-width: 768px) {
-  @media (prefers-reduced-motion: no-preference) {
-    .hero-background {
-      background-attachment: fixed;
-    }
-  }
 }

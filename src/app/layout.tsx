@@ -43,8 +43,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${sourceSans.variable}`}>
-      <body className="antialiased">
+    <html
+      lang="en"
+      className={`h-full bg-navy ${cormorant.variable} ${sourceSans.variable}`}
+    >
+      <body className="min-h-full bg-navy antialiased">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
