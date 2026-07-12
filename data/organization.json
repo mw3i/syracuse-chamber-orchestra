@@ -1,0 +1,34 @@
+{
+  "name": "Syracuse Chamber Orchestra",
+  "shortName": "SCO",
+  "tagline": "High quality concerts for the greater Syracuse community",
+  "mission": "The mission of the Syracuse Chamber Orchestra (SCO) is to offer high quality concerts to the public by its members who are current professionals, para-professionals and music teachers who are members of the greater Syracuse community. The goal and purpose are to add to the musical and cultural enrichment of the community.",
+  "history": "The Syracuse Chamber Orchestra is a newly-formed ensemble of local musicians who are professionals, para-professionals, and music teachers who want to perform and make music together. Supported in part by a grant from the CNY Community Arts program, the orchestra gave its inaugural concert on October 24, 2021 at the Onondaga Community College Recital Hall.",
+  "contact": {
+    "email": "syracusechamberorchestra@gmail.com",
+    "directorName": "Dr. Victor Vallo Jr.",
+    "directorPhone": "(484) 318-1009",
+    "directorEmail": "vvallo@earthlink.net"
+  },
+  "mailingAddress": {
+    "organization": "Syracuse Chamber Orchestra",
+    "line1": "106 Brandywine Drive",
+    "city": "Manlius",
+    "state": "NY",
+    "zip": "13104"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SyracuseChamberOrchestra",
+    "legacyWebsite": "https://sites.google.com/view/syracusechamberorchestra",
+    "youtube": "https://www.youtube.com/results?search_query=Syracuse+Chamber+Orchestra"
+  },
+  "donationUrl": null,
+  "advertising": {
+    "headline": "Request for Advertising",
+    "summary": "We invite you to be a part of the Syracuse Chamber Orchestra. When your business advertises with the SCO you will get a full color ad in each of our programs as well as acknowledgement of your support on our website.",
+    "body": "Our patrons will know you value and support music in our community and the value of live orchestral performances to the CNY area. There will be at least two concerts this year and we had standing room only crowds last year. Our performances will be held at the OCC Recital Hall and the West Genesee High School auditorium.",
+    "instructions": "To place an ad, email syracusechamberorchestra@gmail.com or mail your order to the address below. Please include a camera-ready ad with your order. For a 1/3 page ad a business card is sufficient.",
+    "donationNote": "If you wish to make a donation to the SCO in lieu of an ad please do so on our website. Checks payable to Syracuse Chamber Orchestra.",
+    "email": "syracusechamberorchestra@gmail.com"
+  }
+}

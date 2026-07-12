@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --color-navy: #0f1a2e;
+  --color-charcoal: #1c2430;
+  --color-gold: #c9a84c;
+  --color-gold-light: #dfc06e;
+  --color-cream: #f7f3eb;
+  --color-cream-muted: #e8e2d6;
+  --color-foreground: #1c2430;
+  --color-background: #f7f3eb;
+}
+
+@theme inline {
+  --color-navy: var(--color-navy);
+  --color-charcoal: var(--color-charcoal);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-cream: var(--color-cream);
+  --color-cream-muted: var(--color-cream-muted);
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --font-display: var(--font-cormorant);
+  --font-body: var(--font-source-sans);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.prose-heading {
+  font-family: var(--font-display), Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  border-radius: 0.25rem;
+  background: var(--color-gold);
+  color: var(--color-navy);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.hero-background {
+  background-attachment: scroll;
+}
+
+@media (min-width: 768px) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-background {
+      background-attachment: fixed;
+    }
+  }
+}
