@@ -13,6 +13,7 @@ import type {
   Roster,
   RosterSection,
 } from "./types";
+import { assetUrl } from "./site";
 
 export function getOrganization(): Organization {
   return organizationData as Organization;
@@ -71,12 +72,12 @@ export function getConcertById(id: string): Concert | undefined {
 export function getImage(key: ImageKey): string {
   const images = imagesData as Record<string, string | null>;
   const value = images[key];
-  return value ?? images.placeholder ?? "/placeholder.png";
+  return assetUrl(value ?? images.placeholder ?? "/placeholder.png");
 }
 
 export function getHeroImage(key: ImageKey): string | null {
   const value = (imagesData as Record<string, string | null>)[key];
-  return value ?? null;
+  return value ? assetUrl(value) : null;
 }
 
 export function getImages(): Record<string, string | null> {

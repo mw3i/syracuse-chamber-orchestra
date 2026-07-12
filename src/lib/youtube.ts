@@ -1,3 +1,5 @@
+import { assetUrl } from "./site";
+
 export function getYoutubeVideoId(url: string): string | null {
   const patterns = [
     /youtu\.be\/([^?&/]+)/,
@@ -20,7 +22,7 @@ export function getYoutubeThumbnail(url: string): string {
   const id = getYoutubeVideoId(url);
   return id
     ? `https://img.youtube.com/vi/${id}/hqdefault.jpg`
-    : "/placeholder.png";
+    : assetUrl("/placeholder.png");
 }
 
 export function getYoutubeWatchUrl(url: string): string {

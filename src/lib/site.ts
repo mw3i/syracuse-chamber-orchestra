@@ -5,6 +5,17 @@ import { getOrganization } from "./data";
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://syracusechamberorchestra.com";
 
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+export function assetUrl(path: string): string {
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    return path;
+  }
+
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return `${basePath}${normalized}`;
+}
+
 export function absoluteUrl(path: string): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${siteUrl}${normalized}`;
