@@ -21,7 +21,7 @@ export default function SupportPage() {
         imageKey="hero-support"
         alt="Support the Syracuse Chamber Orchestra"
         align="start"
-        minHeight="medium"
+        minHeight="compact"
       >
         <p className="section-label">Support</p>
         <h1 className="prose-heading mt-4 max-w-3xl text-5xl leading-tight text-cream md:text-6xl">

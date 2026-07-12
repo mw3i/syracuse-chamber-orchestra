@@ -69,11 +69,18 @@ export function getConcertById(id: string): Concert | undefined {
 }
 
 export function getImage(key: ImageKey): string {
-  return (imagesData as Record<string, string>)[key];
+  const images = imagesData as Record<string, string | null>;
+  const value = images[key];
+  return value ?? images.placeholder ?? "/placeholder.png";
 }
 
-export function getImages(): Record<string, string> {
-  return imagesData as Record<string, string>;
+export function getHeroImage(key: ImageKey): string | null {
+  const value = (imagesData as Record<string, string | null>)[key];
+  return value ?? null;
+}
+
+export function getImages(): Record<string, string | null> {
+  return imagesData as Record<string, string | null>;
 }
 
 export function getMedia(): Media {

@@ -17,7 +17,12 @@ export default function AboutPage() {
 
   return (
     <>
-      <HeroRow imageKey="hero-about" alt="About the Syracuse Chamber Orchestra" align="start">
+      <HeroRow
+        imageKey="hero-about"
+        alt="About the Syracuse Chamber Orchestra"
+        align="start"
+        minHeight="small"
+      >
         <p className="section-label">About</p>
         <h1 className="prose-heading mt-4 max-w-3xl text-5xl leading-tight text-cream md:text-6xl">
           Our story

@@ -79,15 +79,15 @@ export interface ConcertsData {
   concerts: Concert[];
 }
 
-export type Images = Record<string, string>;
+export type Images = Record<string, string | null>;
 
-export interface MediaItem {
+export interface MediaVideo {
   title: string;
-  image: ImageKey;
-  youtubeUrl?: string;
+  youtubeUrl: string;
+  publishedAt?: string;
 }
 
 export interface Media {
   youtubeChannelUrl: string;
-  items: MediaItem[];
+  videos: MediaVideo[];
 }

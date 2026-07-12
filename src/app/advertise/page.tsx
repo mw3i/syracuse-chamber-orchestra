@@ -23,13 +23,15 @@ export default function AdvertisePage() {
         imageKey="hero-advertise"
         alt="Advertise with the Syracuse Chamber Orchestra"
         align="start"
-        minHeight="medium"
+        minHeight="compact"
       >
         <p className="section-label">Advertise</p>
         <h1 className="prose-heading mt-4 max-w-3xl text-5xl leading-tight text-cream md:text-6xl">
           {advertising.headline}
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-cream/85">{advertising.summary}</p>
+        <p className="mt-6 max-w-2xl text-lg text-cream/85">
+          {advertising.summary}
+        </p>
       </HeroRow>
 
       <SolidSection>

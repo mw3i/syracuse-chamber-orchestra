@@ -1,11 +1,37 @@
 {
-  "youtubeChannelUrl": "https://www.youtube.com/results?search_query=Syracuse+Chamber+Orchestra",
-  "items": [
-    { "title": "Women Composers Across the Centuries", "image": "gallery-women-composers" },
-    { "title": "Folk Dances & Songs from Around the World", "image": "gallery-folk-dances" },
-    { "title": "Serenades, Nocturnes, and Other Night Music", "image": "gallery-serenades-nocturnes" },
-    { "title": "Mostly Baroque", "image": "gallery-mostly-baroque" },
-    { "title": "Mostly Mozart", "image": "gallery-mostly-mozart" },
-    { "title": "Inaugural Concert — A Tapestry of Music", "image": "gallery-inaugural-concert" }
+  "youtubeChannelUrl": "https://www.youtube.com/@syracusechamberorchestra3609/featured",
+  "videos": [
+    {
+      "title": "Syracuse Chamber Orchestra - Five Country Dances (K. 609)",
+      "youtubeUrl": "https://www.youtube.com/watch?v=UpSVVmRzOW8"
+    },
+    {
+      "title": "Syracuse Chamber Orchestra: Copland - Hoedown",
+      "youtubeUrl": "https://www.youtube.com/watch?v=N1g6A9jodmQ"
+    },
+    {
+      "title": "Syracuse Chamber Orchestra: Brahms - Hungarian Dance No 5",
+      "youtubeUrl": "https://www.youtube.com/watch?v=E4IR8FNjutI"
+    },
+    {
+      "title": "Syracuse Chamber Orchestra: Bartok - Romanian Dances",
+      "youtubeUrl": "https://www.youtube.com/watch?v=dInheVcvZf4"
+    },
+    {
+      "title": "Syracuse Chamber Orchestra: Grieg - Two Norwegian Melodies",
+      "youtubeUrl": "https://www.youtube.com/watch?v=UIJhj6kBjlA"
+    },
+    {
+      "title": "Syracuse Chamber Orchestra: Grainger - Irish Tune from County Derry",
+      "youtubeUrl": "https://www.youtube.com/watch?v=khF5nllGZAA"
+    },
+    {
+      "title": "Syracuse Chamber Orchestra: Vaughan Williams - Rhosymedre",
+      "youtubeUrl": "https://www.youtube.com/watch?v=WFfLJPHL90U"
+    },
+    {
+      "title": "Syracuse Chamber Orchestra: Svendsen - Two Swedish Folk Melodies",
+      "youtubeUrl": "https://www.youtube.com/watch?v=O1WFTrkc0XQ"
+    }
   ]
 }

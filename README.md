@@ -39,7 +39,19 @@ Edit JSON files in `data/`:
 | `roster.json` | Musicians by section (slug, name, role, image key) |
 | `concerts.json` | Concerts — future dates show as upcoming automatically |
 | `images.json` | Image key → path map (place in `public/`) |
-| `media.json` | Gallery items and YouTube channel URL |
+| `media.json` | YouTube channel URL and concert video links |
+
+Example video entry in `media.json`:
+
+```json
+{
+  "title": "Mostly Mozart",
+  "youtubeUrl": "https://www.youtube.com/watch?v=VIDEO_ID",
+  "publishedAt": "2021-12-01"
+}
+```
+
+Thumbnails are pulled automatically from the YouTube link — no local image needed.
 
 Images go in `public/`. Reference them in `images.json` (e.g. `"/photos/concert.jpg"`).
 

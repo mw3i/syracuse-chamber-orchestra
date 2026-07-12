@@ -4,9 +4,9 @@
   "hero-about": "/photos/heroes/about.webp",
   "hero-musicians": "/photos/heroes/musicians.png",
   "hero-events": "/photos/heroes/events.webp",
-  "hero-support": "/photos/heroes/support.png",
-  "hero-media": "/photos/heroes/media.png",
-  "hero-advertise": "/photos/heroes/advertise.png",
+  "hero-support": null,
+  "hero-media": null,
+  "hero-advertise": null,
   "musician-default": "/photos/musicians/default.png",
   "musician-victor-vallo": "/photos/musicians/victor-vallo.png"
 }
