@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ConductorProfile } from "@/components/ConductorProfile";
 import { HeroRow } from "@/components/HeroRow";
 import { MusicianCard } from "@/components/MusicianCard";
 import { SolidSection } from "@/components/SolidSection";
@@ -37,13 +38,7 @@ export default function MusiciansPage() {
       <SolidSection>
         <p className="section-label">Conductor</p>
         <h2 className="prose-heading mt-4 text-4xl md:text-5xl">Music Director</h2>
-        <div className="mt-10 max-w-sm">
-          <MusicianCard
-            musician={conductor}
-            sectionName="Conductor"
-            variant="conductor"
-          />
-        </div>
+        <ConductorProfile conductor={conductor} />
       </SolidSection>
 
       {sections.map((section, index) => (
@@ -52,11 +47,7 @@ export default function MusiciansPage() {
           <h2 className="prose-heading mt-4 text-4xl md:text-5xl">{section.name}</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {section.musicians.map((musician) => (
-              <MusicianCard
-                key={musician.slug}
-                musician={musician}
-                sectionName={section.name}
-              />
+              <MusicianCard key={musician.slug} musician={musician} />
             ))}
           </div>
         </SolidSection>

@@ -34,40 +34,6 @@ export function getAllMusicians(): Musician[] {
   return rosterData.sections.flatMap((section) => section.musicians);
 }
 
-export function getMusicianBySlug(slug: string): Musician | undefined {
-  if (rosterData.conductor.slug === slug) {
-    return rosterData.conductor as Musician;
-  }
-
-  return getAllMusicians().find((musician) => musician.slug === slug);
-}
-
-export function getMusicianWithSection(
-  slug: string,
-): { musician: Musician; section: RosterSection } | undefined {
-  if (rosterData.conductor.slug === slug) {
-    return {
-      musician: rosterData.conductor as Musician,
-      section: {
-        id: "conductor",
-        name: "Conductor",
-        musicians: [],
-      },
-    };
-  }
-
-  for (const section of rosterData.sections) {
-    const musician = section.musicians.find((item) => item.slug === slug);
-    if (musician) {
-      return { musician, section };
-    }
-  }
-}
-
-export function getAllMusicianSlugs(): string[] {
-  return [rosterData.conductor.slug];
-}
-
 export function getConcerts(): Concert[] {
   return (concertsData as { concerts: Concert[] }).concerts;
 }

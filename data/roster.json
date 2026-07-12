@@ -4,7 +4,12 @@
     "name": "Dr. Victor Vallo Jr.",
     "role": "Music Director & Conductor",
     "image": "musician-victor-vallo",
-    "bio": "Dr. Victor Vallo Jr. leads the Syracuse Chamber Orchestra, bringing together career musicians, teachers, and working professionals to perform for the Central New York community."
+    "bioParagraphs": [
+      "Dr. Victor Vallo Jr. is Adjunct Instructor in Trumpet at Le Moyne College and Music Director of the Syracuse Chamber Orchestra. His career spans teaching trumpet, music education, orchestra, and band at colleges and universities across the country.",
+      "He has served as Visiting Assistant Professor of Music Education and Trumpet at the College of Saint Rose (Albany); Professor of Music and Chair of the Departments of Music at Newberry College (SC), Georgia College & State University (GA), and Immaculata University (PA); and Professor of Music and Trumpet at Anderson University (SC), Jacksonville State University (AL), and Southern Arkansas University.",
+      "Dr. Vallo earned a Bachelor of Music in Music Education with Performance Honors in Trumpet from Syracuse University, a Master of Music in Music History from George Washington University, and a Ph.D. in Music Education with an emphasis in Conducting from the University of Florida, where he was Graduate Teaching Assistant for both the band and orchestra programs.",
+      "In addition to teaching and performing on trumpet and cello, Dr. Vallo has music-directed and conducted orchestras throughout the country, including the Newberry Chamber Orchestra, Oconee Regional Symphony Orchestra, Anderson Symphony Orchestra, Arkansas Festival Orchestra, Alabama All-State Orchestra, South Carolina All-State Orchestra, Red Mountain Chamber Orchestra, Greenville Community Chamber Orchestra, Alabama Youth Symphony, Southern Arkansas University Chamber Orchestra, Jacksonville State University Chamber Orchestra, and the PMEA District XII Festival Orchestra."
+    ]
   },
   "sections": [
     {
