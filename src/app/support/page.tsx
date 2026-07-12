@@ -39,10 +39,11 @@ export default function SupportPage() {
         </h2>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-charcoal/80">
           The Syracuse Chamber Orchestra is a non-profit organization dedicated
-          to enriching the cultural life of Central New York.
+          to enriching the cultural life of Central New York. Tax-deductible
+          contributions help keep our concerts free and open to the community.
         </p>
 
-        {org.donationUrl ? (
+        {org.donationUrl && (
           <a
             href={org.donationUrl}
             target="_blank"
@@ -51,33 +52,33 @@ export default function SupportPage() {
           >
             Donate Online
           </a>
-        ) : (
-          <div className="mt-8 max-w-2xl rounded border border-charcoal/10 bg-white p-6">
-            <p className="text-sm uppercase tracking-wider text-charcoal/50">
-              Donate by mail
-            </p>
-            <p className="mt-3 text-charcoal/80">
-              Checks payable to <strong>Syracuse Chamber Orchestra</strong>
-            </p>
-            <address className="mt-4 not-italic text-charcoal/75">
-              {org.mailingAddress.organization}
-              <br />
-              {org.mailingAddress.line1}
-              <br />
-              {org.mailingAddress.city}, {org.mailingAddress.state}{" "}
-              {org.mailingAddress.zip}
-            </address>
-            <p className="mt-4 text-charcoal/75">
-              Questions?{" "}
-              <a
-                href={`mailto:${org.contact.email}`}
-                className="text-gold hover:text-charcoal"
-              >
-                {org.contact.email}
-              </a>
-            </p>
-          </div>
         )}
+
+        <div className="mt-8 max-w-2xl rounded border border-charcoal/10 bg-white p-6">
+          <p className="text-sm uppercase tracking-wider text-charcoal/50">
+            Donate by mail
+          </p>
+          <p className="mt-3 text-charcoal/80">
+            Checks payable to <strong>Syracuse Chamber Orchestra</strong>
+          </p>
+          <address className="mt-4 not-italic text-charcoal/75">
+            {org.mailingAddress.organization}
+            <br />
+            {org.mailingAddress.line1}
+            <br />
+            {org.mailingAddress.city}, {org.mailingAddress.state}{" "}
+            {org.mailingAddress.zip}
+          </address>
+          <p className="mt-4 text-charcoal/75">
+            Questions?{" "}
+            <a
+              href={`mailto:${org.contact.email}`}
+              className="text-gold hover:text-charcoal"
+            >
+              {org.contact.email}
+            </a>
+          </p>
+        </div>
       </SolidSection>
 
       <SolidSection variant="dark">
