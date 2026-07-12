@@ -54,14 +54,14 @@ git push     # triggers GitHub Actions deploy
 
 1. Push this `repo/` folder to a GitHub repository
 2. In repo **Settings → Pages**, set source to **GitHub Actions**
-3. Push to `main` — `.github/workflows/deploy.yml` builds and publishes `out/`
+3. Push to `master` — `.github/workflows/deploy.yml` builds and publishes `out/`
 
 Custom domain: `public/CNAME` contains `syracusechamberorchestra.com`. Point DNS to GitHub Pages and enable the custom domain in repo settings.
 
 Optional env vars:
 
-- `NEXT_PUBLIC_SITE_URL` — canonical URL for SEO (default: `https://syracusechamberorchestra.com`)
-- `NEXT_PUBLIC_BASE_PATH` — only if hosting under a subpath
+- `NEXT_PUBLIC_SITE_URL` — canonical URL for SEO
+- `NEXT_PUBLIC_BASE_PATH` — required for `username.github.io/repo-name` URLs (set automatically in CI). **Remove both env vars in the workflow when using a custom domain at the root** (e.g. `syracusechamberorchestra.com`).
 
 ## Project structure
 
