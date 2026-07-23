@@ -43,7 +43,20 @@ export default function AdvertisePage() {
           {advertising.body}
         </p>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-charcoal/80">
-          {advertising.instructions}
+          {advertising.instructions.includes(advertising.email) ? (
+            <>
+              {advertising.instructions.split(advertising.email)[0]}
+              <a
+                href={`mailto:${advertising.email}`}
+                className="text-gold underline decoration-gold/40 underline-offset-2 hover:text-charcoal hover:decoration-charcoal"
+              >
+                {advertising.email}
+              </a>
+              {advertising.instructions.split(advertising.email)[1]}
+            </>
+          ) : (
+            advertising.instructions
+          )}
         </p>
       </SolidSection>
 
