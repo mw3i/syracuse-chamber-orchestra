@@ -15,67 +15,83 @@
       "id": "violin-i",
       "name": "Violin I",
       "musicians": [
-        { "slug": "jayde-martin", "name": "Jayde Martin", "role": "Concertmaster", "image": "musician-jayde-martin" },
-        { "slug": "melissa-daniels", "name": "Melissa Daniels", "image": "musician-melissa-daniels" },
-        { "slug": "maggie-mercer", "name": "Maggie Mercer", "image": "musician-maggie-mercer" },
-        { "slug": "thalia-collis", "name": "Thalia Collis", "image": "musician-thalia-collis" },
-        { "slug": "carley-anderson", "name": "Carley Anderson", "image": "musician-carley-anderson" }
+        { "slug": "jayde-martin", "name": "Jayde Martin", "image": "musician-default" },
+        { "slug": "melissa-daniels", "name": "Melissa Daniels", "image": "musician-default" },
+        { "slug": "maggie-mercer", "name": "Maggie Mercer", "image": "musician-default" },
+        { "slug": "tricia-hollis", "name": "Tricia Hollis", "image": "musician-default" },
+        { "slug": "lindsey-serrao", "name": "Lindsey Serrao", "image": "musician-default" },
+        { "slug": "elizabeth-cerroni", "name": "Elizabeth Cerroni", "image": "musician-default" }
       ]
     },
     {
       "id": "violin-ii",
       "name": "Violin II",
       "musicians": [
-        { "slug": "bill-mercer", "name": "Bill Mercer", "role": "Principal", "image": "musician-bill-mercer" },
-        { "slug": "michelle-wilcox", "name": "Michelle Wilcox", "image": "musician-michelle-wilcox" },
-        { "slug": "john-harnois", "name": "John Harnois", "image": "musician-john-harnois" },
-        { "slug": "tracy-berner", "name": "Tracy Berner", "image": "musician-tracy-berner" },
-        { "slug": "tracy-cheney", "name": "Tracy Cheney", "image": "musician-tracy-cheney" },
-        { "slug": "lindsey-serrao", "name": "Lindsey Serrao", "image": "musician-lindsey-serrao" }
+        { "slug": "bill-mercer-jr", "name": "Bill Mercer, Jr.", "image": "musician-default" },
+        { "slug": "thalia-collis", "name": "Thalia Collis", "image": "musician-default" },
+        { "slug": "tracy-cheney", "name": "Tracy Cheney", "image": "musician-default" },
+        { "slug": "carley-anderson", "name": "Carley Anderson", "image": "musician-default" },
+        { "slug": "john-harnois", "name": "John Harnois", "image": "musician-default" }
       ]
     },
     {
-      "id": "violas",
-      "name": "Violas",
+      "id": "viola",
+      "name": "Viola",
       "musicians": [
-        { "slug": "allyson-sklar", "name": "Allyson Sklar", "role": "Principal", "image": "musician-allyson-sklar" },
-        { "slug": "anne-hegal", "name": "Anne Hegal", "image": "musician-anne-hegal" },
-        { "slug": "leslie-fayette", "name": "Leslie Fayette", "image": "musician-leslie-fayette" },
-        { "slug": "leigh-pisagih", "name": "Leigh Pisagih", "image": "musician-leigh-pisagih" }
+        { "slug": "edie-shillitoe", "name": "Edie Shillitoe", "image": "musician-default" },
+        { "slug": "kathy-downing", "name": "Kathy Downing", "image": "musician-default" },
+        { "slug": "leslie-fayette", "name": "Leslie Fayette", "image": "musician-default" },
+        { "slug": "allyson-sklar", "name": "Allyson Sklar", "image": "musician-default" },
+        { "slug": "jennifer-bearup", "name": "Jennifer Bearup", "image": "musician-default" },
+        { "slug": "kayce-roman", "name": "Kayce Roman", "image": "musician-default" }
       ]
     },
     {
-      "id": "cellos",
-      "name": "Cellos",
+      "id": "cello",
+      "name": "Cello",
       "musicians": [
-        { "slug": "jessica-talbot", "name": "Jessica Talbot", "role": "Principal", "image": "musician-jessica-talbot" },
-        { "slug": "patine-ryu", "name": "Patine Ryu", "image": "musician-patine-ryu" },
-        { "slug": "suzanne-stephenson", "name": "Suzanne Stephenson", "image": "musician-suzanne-stephenson" },
-        { "slug": "emma-scheneman", "name": "Emma Scheneman", "image": "musician-emma-scheneman" }
+        { "slug": "suzanne-stephenson", "name": "Suzanne Stephenson", "image": "musician-default" },
+        { "slug": "kathryn-laverne", "name": "Kathryn LaVerne", "image": "musician-default" },
+        { "slug": "patine-ryu", "name": "Patine Ryu", "image": "musician-default" },
+        { "slug": "kristen-kopf", "name": "Kristen Kopf", "image": "musician-default" },
+        { "slug": "jessica-talbot", "name": "Jessica Talbot", "image": "musician-default" },
+        { "slug": "joe-brin", "name": "Joe Brin", "image": "musician-default" }
       ]
     },
     {
-      "id": "basses",
-      "name": "Basses",
+      "id": "double-bass",
+      "name": "Double Bass",
       "musicians": [
-        { "slug": "dave-perry", "name": "Dave Perry", "role": "Principal", "image": "musician-dave-perry" },
-        { "slug": "steve-fayette", "name": "Steve Fayette", "image": "musician-steve-fayette" }
+        { "slug": "dave-perry", "name": "Dave Perry", "image": "musician-default" },
+        { "slug": "steve-fayette", "name": "Steve Fayette", "image": "musician-default" }
       ]
     },
     {
-      "id": "oboes",
-      "name": "Oboes",
+      "id": "flute",
+      "name": "Flute",
       "musicians": [
-        { "slug": "janelle-bookhout", "name": "Janelle Bookhout", "role": "Principal", "image": "musician-janelle-bookhout" },
-        { "slug": "terri-tallman", "name": "Terri Tallman", "image": "musician-terri-tallman" }
+        { "slug": "chris-dranchek", "name": "Chris Dranchek", "image": "musician-default" }
       ]
     },
     {
-      "id": "french-horns",
-      "name": "French Horns",
+      "id": "oboe",
+      "name": "Oboe",
       "musicians": [
-        { "slug": "bill-davern", "name": "Bill Davern", "role": "Principal", "image": "musician-bill-davern" },
-        { "slug": "sally-greenfield", "name": "Sally Greenfield", "image": "musician-sally-greenfield" }
+        { "slug": "janelle-bookhout", "name": "Janelle Bookhout", "image": "musician-default" }
+      ]
+    },
+    {
+      "id": "french-horn",
+      "name": "French Horn",
+      "musicians": [
+        { "slug": "bill-davern", "name": "Bill Davern", "image": "musician-default" }
+      ]
+    },
+    {
+      "id": "trumpet",
+      "name": "Trumpet",
+      "musicians": [
+        { "slug": "lee-turner", "name": "Lee Turner", "image": "musician-default" }
       ]
     }
   ]
