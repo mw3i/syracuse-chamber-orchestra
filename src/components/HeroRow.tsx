@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 import { getHeroImage } from "@/lib/data";
 import type { ImageKey } from "@/lib/types";
@@ -13,6 +13,39 @@ interface HeroRowProps {
   minHeight?: "compact" | "small" | "medium" | "large";
   overlay?: "default" | "medium" | "moderate" | "clear";
   textContrast?: "default" | "strong";
+}
+
+function getImageHeroStyle(
+  imageSrc: string,
+  overlay: HeroRowProps["overlay"],
+): CSSProperties {
+  const layers: string[] = [];
+
+  if (overlay === "default") {
+    layers.push(
+      "radial-gradient(circle at center, transparent 0%, rgba(15, 26, 46, 0.35) 100%)",
+      "linear-gradient(to bottom, rgba(15, 26, 46, 0.85), rgba(15, 26, 46, 0.7), rgba(15, 26, 46, 0.9))",
+    );
+  } else if (overlay === "medium") {
+    layers.push(
+      "radial-gradient(circle at center, transparent 0%, rgba(15, 26, 46, 0.28) 100%)",
+      "linear-gradient(to bottom, rgba(15, 26, 46, 0.72), rgba(15, 26, 46, 0.58), rgba(15, 26, 46, 0.78))",
+    );
+  } else if (overlay === "moderate") {
+    layers.push(
+      "radial-gradient(circle at center, transparent 0%, rgba(15, 26, 46, 0.14) 100%)",
+      "linear-gradient(to bottom, rgba(15, 26, 46, 0.35), rgba(15, 26, 46, 0.28), rgba(15, 26, 46, 0.4))",
+    );
+  }
+
+  layers.push(`url(${imageSrc})`);
+
+  return {
+    backgroundImage: layers.join(", "),
+    backgroundSize: Array(layers.length).fill("cover").join(", "),
+    backgroundPosition: Array(layers.length).fill("center").join(", "),
+    backgroundRepeat: Array(layers.length).fill("no-repeat").join(", "),
+  };
 }
 
 export function HeroRow({
@@ -58,33 +91,13 @@ export function HeroRow({
           <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/55 to-navy/80" />
         </>
       ) : (
-        <>
-          <div
-            aria-hidden={alt ? undefined : true}
-            role={alt ? "img" : undefined}
-            aria-label={alt || undefined}
-            className="hero-background absolute inset-0 scale-105 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${imageSrc})` }}
-          />
-          {overlay === "default" && (
-            <>
-              <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/70 to-navy/90" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,26,46,0.35)_100%)]" />
-            </>
-          )}
-          {overlay === "medium" && (
-            <>
-              <div className="absolute inset-0 bg-gradient-to-b from-navy/72 via-navy/58 to-navy/78" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,26,46,0.28)_100%)]" />
-            </>
-          )}
-          {overlay === "moderate" && (
-            <>
-              <div className="absolute inset-0 bg-gradient-to-b from-navy/35 via-navy/28 to-navy/40" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,26,46,0.14)_100%)]" />
-            </>
-          )}
-        </>
+        <div
+          aria-hidden={alt ? undefined : true}
+          role={alt ? "img" : undefined}
+          aria-label={alt || undefined}
+          className="hero-background hero-background-image absolute inset-0"
+          style={getImageHeroStyle(imageSrc, overlay)}
+        />
       )}
       <Container
         className={`relative z-10 flex h-full ${height} flex-col justify-center ${padding} ${alignment}`}

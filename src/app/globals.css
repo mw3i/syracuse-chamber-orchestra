@@ -131,3 +131,15 @@ section.hero-text-strong:has(.hero-background) .section-label {
 .hero-background {
   background-attachment: scroll;
 }
+
+@media (min-width: 768px) {
+  .hero-background-image {
+    background-attachment: fixed;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-background-image {
+    background-attachment: scroll;
+  }
+}

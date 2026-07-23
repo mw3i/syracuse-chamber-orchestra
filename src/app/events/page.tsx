@@ -23,7 +23,7 @@ export default function EventsPage() {
         imageKey="hero-events"
         alt="Syracuse Chamber Orchestra concerts"
         align="start"
-        minHeight="medium"
+        minHeight="compact"
         overlay="medium"
       >
         <p className="section-label">Events</p>
