@@ -95,7 +95,7 @@ export function HeroRow({
           aria-hidden={alt ? undefined : true}
           role={alt ? "img" : undefined}
           aria-label={alt || undefined}
-          className="hero-background hero-background-image absolute inset-0"
+          className="hero-background absolute inset-0"
           style={getImageHeroStyle(imageSrc, overlay)}
         />
       )}
