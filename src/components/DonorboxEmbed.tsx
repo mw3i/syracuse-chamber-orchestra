@@ -13,7 +13,7 @@ export function DonorboxEmbed({ donationUrl }: DonorboxEmbedProps) {
   }
 
   return (
-    <div className="mt-8 w-full max-w-[500px]">
+    <div className="w-full">
       <Script
         src="https://donorbox.org/widgets.js"
         type="module"

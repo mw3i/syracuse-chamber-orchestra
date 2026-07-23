@@ -34,42 +34,52 @@ export default function SupportPage() {
       </HeroRow>
 
       <SolidSection>
-        <p className="section-label">Donate</p>
-        <h2 className="prose-heading mt-4 text-4xl md:text-5xl">
-          Make a contribution
-        </h2>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-charcoal/80">
-          The Syracuse Chamber Orchestra is a non-profit organization dedicated
-          to enriching the cultural life of Central New York. Tax-deductible
-          contributions help keep our concerts free and open to the community.
-        </p>
+        <div className="grid gap-10 md:grid-cols-2 md:items-start lg:gap-12">
+          <div>
+            <p className="section-label">Donate</p>
+            <h2 className="prose-heading mt-4 text-4xl md:text-5xl">
+              Make a contribution
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-charcoal/80">
+              The Syracuse Chamber Orchestra is a non-profit organization
+              dedicated to enriching the cultural life of Central New York.
+              Tax-deductible contributions help keep our concerts free and open
+              to the community.
+            </p>
 
-        {org.donationUrl && <DonorboxEmbed donationUrl={org.donationUrl} />}
+            <div className="mt-8 rounded border border-charcoal/5 bg-charcoal/[0.03] p-5">
+              <p className="text-xs uppercase tracking-wider text-charcoal/45">
+                Donate by mail
+              </p>
+              <p className="mt-3 text-sm text-charcoal/65">
+                Checks payable to{" "}
+                <strong className="font-medium text-charcoal/75">
+                  Syracuse Chamber Orchestra
+                </strong>
+              </p>
+              <address className="mt-3 not-italic text-sm text-charcoal/60">
+                {org.mailingAddress.organization}
+                <br />
+                {org.mailingAddress.line1}
+                <br />
+                {org.mailingAddress.city}, {org.mailingAddress.state}{" "}
+                {org.mailingAddress.zip}
+              </address>
+              <p className="mt-3 text-sm text-charcoal/60">
+                Questions?{" "}
+                <a
+                  href={`mailto:${org.contact.email}`}
+                  className="text-charcoal/70 underline decoration-charcoal/20 underline-offset-2 hover:text-gold hover:decoration-gold"
+                >
+                  {org.contact.email}
+                </a>
+              </p>
+            </div>
+          </div>
 
-        <div className="mt-10 max-w-2xl rounded border border-charcoal/10 bg-white p-6">
-          <p className="text-sm uppercase tracking-wider text-charcoal/50">
-            Donate by mail
-          </p>
-          <p className="mt-3 text-charcoal/80">
-            Checks payable to <strong>Syracuse Chamber Orchestra</strong>
-          </p>
-          <address className="mt-4 not-italic text-charcoal/75">
-            {org.mailingAddress.organization}
-            <br />
-            {org.mailingAddress.line1}
-            <br />
-            {org.mailingAddress.city}, {org.mailingAddress.state}{" "}
-            {org.mailingAddress.zip}
-          </address>
-          <p className="mt-4 text-charcoal/75">
-            Questions?{" "}
-            <a
-              href={`mailto:${org.contact.email}`}
-              className="text-gold hover:text-charcoal"
-            >
-              {org.contact.email}
-            </a>
-          </p>
+          {org.donationUrl && (
+            <DonorboxEmbed donationUrl={org.donationUrl} />
+          )}
         </div>
       </SolidSection>
 
