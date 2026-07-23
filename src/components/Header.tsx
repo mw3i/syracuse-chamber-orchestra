@@ -17,10 +17,8 @@ export function Header() {
           className="group min-w-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
         >
           <span className="font-display text-lg tracking-wide text-cream transition-colors group-hover:text-gold sm:text-2xl">
-            {org.shortName}
-          </span>
-          <span className="mt-0.5 hidden text-xs uppercase tracking-[0.2em] text-cream/60 sm:block sm:text-sm">
-            Syracuse Chamber Orchestra
+            <span className="sm:hidden">{org.shortName}</span>
+            <span className="hidden sm:inline">{org.name}</span>
           </span>
         </Link>
 
