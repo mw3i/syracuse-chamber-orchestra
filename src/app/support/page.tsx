@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { DonorboxEmbed } from "@/components/DonorboxEmbed";
 import { HeroRow } from "@/components/HeroRow";
 import { SolidSection } from "@/components/SolidSection";
 import { getOrganization } from "@/lib/data";
@@ -43,18 +44,9 @@ export default function SupportPage() {
           contributions help keep our concerts free and open to the community.
         </p>
 
-        {org.donationUrl && (
-          <a
-            href={org.donationUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-8 inline-block rounded border border-gold bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-wider text-navy transition-colors hover:bg-gold-light"
-          >
-            Donate Online
-          </a>
-        )}
+        {org.donationUrl && <DonorboxEmbed donationUrl={org.donationUrl} />}
 
-        <div className="mt-8 max-w-2xl rounded border border-charcoal/10 bg-white p-6">
+        <div className="mt-10 max-w-2xl rounded border border-charcoal/10 bg-white p-6">
           <p className="text-sm uppercase tracking-wider text-charcoal/50">
             Donate by mail
           </p>

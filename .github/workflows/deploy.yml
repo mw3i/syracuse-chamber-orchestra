@@ -32,8 +32,7 @@ jobs:
 
       - name: Build static site
         env:
-          NEXT_PUBLIC_BASE_PATH: /syracuse-chamber-orchestra
-          NEXT_PUBLIC_SITE_URL: https://mw3i.github.io/syracuse-chamber-orchestra
+          NEXT_PUBLIC_SITE_URL: https://syracusechamberorchestra.com
         run: npm run build
 
       - name: Upload artifact
