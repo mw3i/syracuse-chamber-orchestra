@@ -15,6 +15,41 @@ interface HeroRowProps {
   textContrast?: "default" | "strong";
 }
 
+function isVideoHero(src: string): boolean {
+  return /\.(mp4|webm|mov)(\?|$)/i.test(src);
+}
+
+function HeroOverlay({ overlay }: { overlay: HeroRowProps["overlay"] }) {
+  if (overlay === "default") {
+    return (
+      <>
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/70 to-navy/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,26,46,0.35)_100%)]" />
+      </>
+    );
+  }
+
+  if (overlay === "medium") {
+    return (
+      <>
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/72 via-navy/58 to-navy/78" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,26,46,0.28)_100%)]" />
+      </>
+    );
+  }
+
+  if (overlay === "moderate") {
+    return (
+      <>
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/35 via-navy/28 to-navy/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,26,46,0.14)_100%)]" />
+      </>
+    );
+  }
+
+  return null;
+}
+
 function getImageHeroStyle(
   imageSrc: string,
   overlay: HeroRowProps["overlay"],
@@ -59,6 +94,7 @@ export function HeroRow({
 }: HeroRowProps) {
   const imageSrc = getHeroImage(imageKey);
   const isGradientHero = imageSrc === null;
+  const isVideo = imageSrc !== null && isVideoHero(imageSrc);
   const alignment =
     align === "center"
       ? "items-center text-center"
@@ -89,6 +125,21 @@ export function HeroRow({
             className="hero-background absolute inset-0 bg-[#d4dce6]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/55 to-navy/80" />
+        </>
+      ) : isVideo ? (
+        <>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-hidden={alt ? undefined : true}
+            className="hero-background absolute inset-0 h-full w-full object-cover"
+          >
+            <source src={imageSrc} type="video/mp4" />
+          </video>
+          <HeroOverlay overlay={overlay} />
         </>
       ) : (
         <div
