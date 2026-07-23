@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { SolidSection } from "@/components/SolidSection";
 import { getMedia, getOrganization } from "@/lib/data";
-import { createPageMetadata } from "@/lib/site";
+import { createPageMetadata, showFacebookLinks } from "@/lib/site";
 import {
   getYoutubeThumbnail,
   getYoutubeVideoId,
@@ -116,7 +116,7 @@ export default function MediaPage() {
           >
             YouTube
           </a>
-          {org.social.facebook && (
+          {showFacebookLinks && org.social.facebook && (
             <a
               href={org.social.facebook}
               target="_blank"

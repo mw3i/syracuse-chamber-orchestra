@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { getOrganization } from "@/lib/data";
 import { navItems } from "@/lib/navigation";
+import { showFacebookLinks } from "@/lib/site";
 
 export function Footer() {
   const org = getOrganization();
@@ -50,7 +51,7 @@ export function Footer() {
               {org.mailingAddress.city}, {org.mailingAddress.state}{" "}
               {org.mailingAddress.zip}
             </p>
-            {org.social.facebook && (
+            {showFacebookLinks && org.social.facebook && (
               <p>
                 <a
                   href={org.social.facebook}

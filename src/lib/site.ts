@@ -55,3 +55,5 @@ export function createPageMetadata({
 
 export const defaultDescription =
   "A community orchestra in Syracuse, New York providing free concerts to the public.";
+
+export const showFacebookLinks = false;
