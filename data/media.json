@@ -1,37 +1,59 @@
 {
   "youtubeChannelUrl": "https://www.youtube.com/@syracusechamberorchestra3609/featured",
-  "videos": [
+  "concerts": [
     {
-      "title": "Syracuse Chamber Orchestra - Five Country Dances (K. 609)",
-      "youtubeUrl": "https://www.youtube.com/watch?v=UpSVVmRzOW8"
+      "title": "Women Composers Across the Centuries",
+      "videos": [
+        {
+          "title": "Four Military Marches",
+          "youtubeUrl": "https://youtu.be/8ENn_tB7oeo"
+        },
+        {
+          "title": "String Quartet No 2",
+          "youtubeUrl": "https://youtu.be/rz7PozCTfOU"
+        },
+        {
+          "title": "Song Without Words, Op 8, No 3",
+          "youtubeUrl": "https://youtu.be/fhFi0nZZEi4"
+        }
+      ]
     },
     {
-      "title": "Syracuse Chamber Orchestra: Copland - Hoedown",
-      "youtubeUrl": "https://www.youtube.com/watch?v=N1g6A9jodmQ"
-    },
-    {
-      "title": "Syracuse Chamber Orchestra: Brahms - Hungarian Dance No 5",
-      "youtubeUrl": "https://www.youtube.com/watch?v=E4IR8FNjutI"
-    },
-    {
-      "title": "Syracuse Chamber Orchestra: Bartok - Romanian Dances",
-      "youtubeUrl": "https://www.youtube.com/watch?v=dInheVcvZf4"
-    },
-    {
-      "title": "Syracuse Chamber Orchestra: Grieg - Two Norwegian Melodies",
-      "youtubeUrl": "https://www.youtube.com/watch?v=UIJhj6kBjlA"
-    },
-    {
-      "title": "Syracuse Chamber Orchestra: Grainger - Irish Tune from County Derry",
-      "youtubeUrl": "https://www.youtube.com/watch?v=khF5nllGZAA"
-    },
-    {
-      "title": "Syracuse Chamber Orchestra: Vaughan Williams - Rhosymedre",
-      "youtubeUrl": "https://www.youtube.com/watch?v=WFfLJPHL90U"
-    },
-    {
-      "title": "Syracuse Chamber Orchestra: Svendsen - Two Swedish Folk Melodies",
-      "youtubeUrl": "https://www.youtube.com/watch?v=O1WFTrkc0XQ"
+      "title": "Folk Songs & Dances from Around the World",
+      "videos": [
+        {
+          "title": "Syracuse Chamber Orchestra - Five Country Dances (K. 609)",
+          "youtubeUrl": "https://www.youtube.com/watch?v=UpSVVmRzOW8"
+        },
+        {
+          "title": "Syracuse Chamber Orchestra: Copland - Hoedown",
+          "youtubeUrl": "https://www.youtube.com/watch?v=N1g6A9jodmQ"
+        },
+        {
+          "title": "Syracuse Chamber Orchestra: Brahms - Hungarian Dance No 5",
+          "youtubeUrl": "https://www.youtube.com/watch?v=E4IR8FNjutI"
+        },
+        {
+          "title": "Syracuse Chamber Orchestra: Bartok - Romanian Dances",
+          "youtubeUrl": "https://www.youtube.com/watch?v=dInheVcvZf4"
+        },
+        {
+          "title": "Syracuse Chamber Orchestra: Grieg - Two Norwegian Melodies",
+          "youtubeUrl": "https://www.youtube.com/watch?v=UIJhj6kBjlA"
+        },
+        {
+          "title": "Syracuse Chamber Orchestra: Grainger - Irish Tune from County Derry",
+          "youtubeUrl": "https://www.youtube.com/watch?v=khF5nllGZAA"
+        },
+        {
+          "title": "Syracuse Chamber Orchestra: Vaughan Williams - Rhosymedre",
+          "youtubeUrl": "https://www.youtube.com/watch?v=WFfLJPHL90U"
+        },
+        {
+          "title": "Syracuse Chamber Orchestra: Svendsen - Two Swedish Folk Melodies",
+          "youtubeUrl": "https://www.youtube.com/watch?v=O1WFTrkc0XQ"
+        }
+      ]
     }
   ]
 }

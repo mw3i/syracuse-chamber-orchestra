@@ -17,10 +17,8 @@ export const metadata: Metadata = createPageMetadata({
   path: "/media",
 });
 
-export default function MediaPage() {
-  const media = getMedia();
-  const org = getOrganization();
-  const videos = media.videos
+function sortVideos(videos: ReturnType<typeof getMedia>["concerts"][number]["videos"]) {
+  return videos
     .filter((video) => getYoutubeVideoId(video.youtubeUrl))
     .sort((a, b) => {
       if (a.publishedAt && b.publishedAt) {
@@ -28,6 +26,17 @@ export default function MediaPage() {
       }
       return 0;
     });
+}
+
+export default function MediaPage() {
+  const media = getMedia();
+  const org = getOrganization();
+  const concerts = media.concerts
+    .map((concert) => ({
+      ...concert,
+      videos: sortVideos(concert.videos),
+    }))
+    .filter((concert) => concert.videos.length > 0);
 
   return (
     <>
@@ -48,44 +57,49 @@ export default function MediaPage() {
           View YouTube Channel
         </a>
 
-        {videos.length > 0 && (
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {videos.map((video) => {
-              const watchUrl = getYoutubeWatchUrl(video.youtubeUrl);
+        {concerts.map((concert) => (
+          <section key={concert.title} className="mt-12">
+            <h2 className="prose-heading text-3xl text-charcoal md:text-4xl">
+              {concert.title}
+            </h2>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {concert.videos.map((video) => {
+                const watchUrl = getYoutubeWatchUrl(video.youtubeUrl);
 
-              return (
-                <a
-                  key={watchUrl}
-                  href={watchUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group overflow-hidden rounded border border-charcoal/10 bg-white transition-colors hover:border-gold"
-                >
-                  <div className="relative aspect-video overflow-hidden bg-cream-muted">
-                    <Image
-                      src={getYoutubeThumbnail(video.youtubeUrl)}
-                      alt={video.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      unoptimized
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-navy/40 opacity-0 transition-opacity group-hover:opacity-100">
-                      <span className="rounded bg-gold px-4 py-2 text-xs font-semibold uppercase tracking-wider text-navy">
-                        Watch on YouTube
-                      </span>
+                return (
+                  <a
+                    key={watchUrl}
+                    href={watchUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group overflow-hidden rounded border border-charcoal/10 bg-white transition-colors hover:border-gold"
+                  >
+                    <div className="relative aspect-video overflow-hidden bg-cream-muted">
+                      <Image
+                        src={getYoutubeThumbnail(video.youtubeUrl)}
+                        alt={video.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        unoptimized
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-navy/40 opacity-0 transition-opacity group-hover:opacity-100">
+                        <span className="rounded bg-gold px-4 py-2 text-xs font-semibold uppercase tracking-wider text-navy">
+                          Watch on YouTube
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="prose-heading text-xl text-charcoal group-hover:text-gold">
-                      {video.title}
-                    </h3>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        )}
+                    <div className="p-5">
+                      <h3 className="prose-heading text-xl text-charcoal group-hover:text-gold">
+                        {video.title}
+                      </h3>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        ))}
       </SolidSection>
 
       <SolidSection variant="dark">

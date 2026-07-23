@@ -87,7 +87,12 @@ export interface MediaVideo {
   publishedAt?: string;
 }
 
+export interface MediaConcert {
+  title: string;
+  videos: MediaVideo[];
+}
+
 export interface Media {
   youtubeChannelUrl: string;
-  videos: MediaVideo[];
+  concerts: MediaConcert[];
 }
