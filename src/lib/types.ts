@@ -27,11 +27,16 @@ export interface Organization {
   donationUrl: string | null;
   advertising: {
     headline: string;
+    season: string;
     summary: string;
+    invite: string;
     body: string;
-    instructions: string;
+    cameraReadyNote: string;
     donationNote: string;
     email: string;
+    emailSubject: string;
+    adPaymentUrl: string;
+    adSizes: { label: string; price: number }[];
   };
 }
 
