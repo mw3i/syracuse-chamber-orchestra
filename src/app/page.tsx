@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { HeroRow } from "@/components/HeroRow";
@@ -7,7 +8,7 @@ import {
   getOrganization,
   getUpcomingConcerts,
 } from "@/lib/data";
-import { createPageMetadata } from "@/lib/site";
+import { assetUrl, createPageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Home",
@@ -28,7 +29,15 @@ export default function Home() {
         overlay="moderate"
         textContrast="strong"
       >
-        <p className="section-label">Syracuse, New York</p>
+        <Image
+          src={assetUrl("/photos/icon.png")}
+          alt=""
+          width={96}
+          height={96}
+          className="h-10 w-10 object-contain opacity-90 brightness-90 sm:h-12 sm:w-12 md:h-14 md:w-14"
+          priority
+        />
+        <p className="section-label mt-5">Syracuse, New York</p>
         <h1 className="prose-heading mt-4 max-w-3xl text-4xl leading-tight text-cream sm:text-5xl md:text-7xl">
           {org.name}
         </h1>
