@@ -1,6 +1,55 @@
 {
   "concerts": [
     {
+      "id": "symphony-samplers-2026-10-25",
+      "title": "Symphony Samplers",
+      "startAt": "2026-10-25T15:00:00-04:00",
+      "venue": {
+        "name": "Park Central Presbyterian Church",
+        "address": "504 E Fayette St",
+        "city": "Syracuse",
+        "state": "NY",
+        "zip": "13202"
+      },
+      "program": [
+        {
+          "composer": "Johann Christian Bach",
+          "title": "Sinfonia in D major (Overture to Temistocle)",
+          "movements": ["Allegro di molto"]
+        },
+        {
+          "composer": "Wolfgang Amadeus Mozart",
+          "title": "Symphony No. 40 in G minor, K. 550",
+          "movements": ["Allegro molto"]
+        },
+        {
+          "composer": "Felix Mendelssohn",
+          "title": "Sinfonia No. 6 in E-flat",
+          "movements": ["Allegro", "Menuetto and Trio", "Prestissimo"]
+        },
+        { "intermission": true },
+        {
+          "composer": "Chevalier de Saint-Georges",
+          "title": "Symphony No. 1 in G",
+          "movements": ["Allegro", "Andante", "Allegro assai"]
+        },
+        {
+          "composer": "Ludwig van Beethoven",
+          "title": "Symphony No. 7",
+          "movements": ["Allegretto"]
+        },
+        {
+          "composer": "Franz Joseph Haydn",
+          "title": "Symphony No. 88",
+          "movements": ["Allegro con spirito"]
+        }
+      ],
+      "programUrl": null,
+      "posterUrl": null,
+      "pressReleaseUrl": null,
+      "notes": null
+    },
+    {
       "id": "women-composers-across-the-centuries-2026-04-26",
       "title": "Women Composers Across the Centuries",
       "startAt": "2026-04-26T15:00:00-04:00",
@@ -11,6 +60,7 @@
         "state": "NY",
         "zip": "13202"
       },
+      "program": null,
       "programUrl": null,
       "posterUrl": null,
       "pressReleaseUrl": null,
@@ -21,6 +71,7 @@
       "title": "Folk Dances & Songs from Around the World",
       "startAt": "2025-10-19T15:00:00-04:00",
       "venue": null,
+      "program": null,
       "programUrl": null,
       "posterUrl": null,
       "pressReleaseUrl": null,
@@ -31,6 +82,7 @@
       "title": "Serenades, Nocturnes, and Other Night Music",
       "startAt": "2025-06-08T15:00:00-04:00",
       "venue": null,
+      "program": null,
       "programUrl": null,
       "posterUrl": null,
       "pressReleaseUrl": null,
@@ -47,6 +99,7 @@
         "state": "NY",
         "zip": "13215"
       },
+      "program": null,
       "programUrl": null,
       "posterUrl": null,
       "pressReleaseUrl": null,
@@ -63,6 +116,7 @@
         "state": "NY",
         "zip": "13031"
       },
+      "program": null,
       "programUrl": null,
       "posterUrl": null,
       "pressReleaseUrl": null,
@@ -79,6 +133,7 @@
         "state": "NY",
         "zip": "13215"
       },
+      "program": null,
       "programUrl": null,
       "posterUrl": null,
       "pressReleaseUrl": null,
@@ -95,6 +150,7 @@
         "state": "NY",
         "zip": "13215"
       },
+      "program": null,
       "programUrl": null,
       "posterUrl": null,
       "pressReleaseUrl": null,
@@ -111,6 +167,7 @@
         "state": "NY",
         "zip": "13215"
       },
+      "program": null,
       "programUrl": null,
       "posterUrl": null,
       "pressReleaseUrl": null,
@@ -127,6 +184,7 @@
         "state": "NY",
         "zip": "13215"
       },
+      "program": null,
       "programUrl": null,
       "posterUrl": null,
       "pressReleaseUrl": null,
