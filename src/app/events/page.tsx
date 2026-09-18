@@ -37,9 +37,8 @@ export default function EventsPage() {
       </HeroRow>
 
       <SolidSection>
-        <p className="section-label">Upcoming</p>
-        <h2 className="prose-heading mt-4 text-4xl md:text-5xl">
-          Next performances
+        <h2 className="prose-heading text-6xl text-gold md:text-7xl">
+          Upcoming
         </h2>
         <div className="mt-10">
           <ConcertList
