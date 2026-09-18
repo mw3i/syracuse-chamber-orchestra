@@ -53,8 +53,8 @@ function ConcertHeader({ concert, isUpcoming }: { concert: Concert; isUpcoming: 
 
   return (
     <div>
-      <p className="section-label">{isUpcoming ? "Upcoming" : "Past Concert"}</p>
-      <h3 className="prose-heading mt-3 text-4xl leading-tight text-charcoal md:text-5xl">
+      {!isUpcoming && <p className="section-label">Past Concert</p>}
+      <h3 className="prose-heading mt-3 text-4xl leading-tight text-charcoal first:mt-0 md:text-5xl">
         {concert.title}
       </h3>
       <p className="prose-heading mt-3 text-xl text-charcoal/70 md:text-2xl">
