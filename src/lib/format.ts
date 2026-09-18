@@ -27,3 +27,8 @@ export function formatVenueLines(venue: Venue | null): string[] {
     `${venue.city}, ${venue.state} ${venue.zip}`,
   ];
 }
+
+export function venueMapEmbedUrl(venue: Venue): string {
+  const query = `${venue.name}, ${venue.address}, ${venue.city}, ${venue.state} ${venue.zip}`;
+  return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+}

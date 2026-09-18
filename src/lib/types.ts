@@ -69,11 +69,24 @@ export interface Venue {
   zip: string;
 }
 
+export interface ProgramPiece {
+  composer: string;
+  title: string;
+  movements?: string[];
+}
+
+export interface ProgramIntermission {
+  intermission: true;
+}
+
+export type ProgramItem = ProgramPiece | ProgramIntermission;
+
 export interface Concert {
   id: string;
   title: string;
   startAt: string;
   venue: Venue | null;
+  program: ProgramItem[] | null;
   programUrl: string | null;
   posterUrl: string | null;
   pressReleaseUrl: string | null;
