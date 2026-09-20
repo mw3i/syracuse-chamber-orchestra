@@ -1,11 +1,14 @@
 import type { Venue } from "./types";
 
+const CONCERT_TIME_ZONE = "America/New_York";
+
 export function formatConcertDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-US", {
     weekday: "long",
     month: "long",
     day: "numeric",
     year: "numeric",
+    timeZone: CONCERT_TIME_ZONE,
   });
 }
 
@@ -13,6 +16,7 @@ export function formatConcertTime(iso: string): string {
   return new Date(iso).toLocaleTimeString("en-US", {
     hour: "numeric",
     minute: "2-digit",
+    timeZone: CONCERT_TIME_ZONE,
   });
 }
 
