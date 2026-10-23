@@ -32,7 +32,14 @@ export function formatVenueLines(venue: Venue | null): string[] {
   ];
 }
 
+function venueQuery(venue: Venue): string {
+  return `${venue.name}, ${venue.address}, ${venue.city}, ${venue.state} ${venue.zip}`;
+}
+
 export function venueMapEmbedUrl(venue: Venue): string {
-  const query = `${venue.name}, ${venue.address}, ${venue.city}, ${venue.state} ${venue.zip}`;
-  return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+  return `https://www.google.com/maps?q=${encodeURIComponent(venueQuery(venue))}&output=embed`;
+}
+
+export function venueMapsUrl(venue: Venue): string {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueQuery(venue))}`;
 }
