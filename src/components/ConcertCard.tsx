@@ -119,7 +119,8 @@ export function ConcertCard({ concert, variant = "past" }: ConcertCardProps) {
       ? "border-gold/40 bg-cream text-charcoal"
       : "border-cream/15 bg-cream text-charcoal"
   }`;
-  const hasProgram = Boolean(concert.program && concert.program.length > 0);
+  const hasProgram =
+    isUpcoming && Boolean(concert.program && concert.program.length > 0);
 
   if (isUpcoming && concert.venue) {
     return (
