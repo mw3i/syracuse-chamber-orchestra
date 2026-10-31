@@ -62,7 +62,7 @@ function ConcertHeader({ concert, isUpcoming }: { concert: Concert; isUpcoming: 
         {formatConcertDate(concert.startAt)} · {formatConcertTime(concert.startAt)}
       </p>
 
-      {concert.venue && venueLines.length > 0 && (
+      {isUpcoming && concert.venue && venueLines.length > 0 && (
         <address className="mt-4 not-italic text-sm text-charcoal/75">
           <a
             href={venueMapsUrl(concert.venue)}
