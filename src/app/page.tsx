@@ -3,11 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { HeroRow } from "@/components/HeroRow";
+import { NextConcert } from "@/components/NextConcert";
 import { SolidSection } from "@/components/SolidSection";
-import {
-  getOrganization,
-  getUpcomingConcerts,
-} from "@/lib/data";
+import { buildTime } from "@/lib/buildTime";
+import { getConcerts, getOrganization } from "@/lib/data";
 import { assetUrl, createPageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
@@ -19,7 +18,6 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function Home() {
   const org = getOrganization();
-  const upcoming = getUpcomingConcerts()[0];
 
   return (
     <>
@@ -64,19 +62,7 @@ export default function Home() {
         overlay="medium"
       >
         <p className="section-label">Upcoming</p>
-        <h2 className="prose-heading mt-4 max-w-2xl text-4xl leading-tight text-cream md:text-5xl">
-          {upcoming ? upcoming.title : "Concerts coming soon"}
-        </h2>
-        {upcoming && (
-          <p className="mt-4 text-lg text-cream/80">
-            {new Date(upcoming.startAt).toLocaleDateString("en-US", {
-              weekday: "long",
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            })}
-          </p>
-        )}
+        <NextConcert concerts={getConcerts()} buildTime={buildTime} />
         <div className="mt-8 flex flex-wrap gap-4">
           <Link
             href="/events"

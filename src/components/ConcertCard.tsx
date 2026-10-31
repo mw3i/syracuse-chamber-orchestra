@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import {
   formatConcertDate,
   formatConcertTime,
@@ -7,7 +5,6 @@ import {
   venueMapEmbedUrl,
   venueMapsUrl,
 } from "@/lib/format";
-import { assetUrl } from "@/lib/site";
 import type { Concert } from "@/lib/types";
 
 interface ConcertCardProps {
@@ -89,16 +86,8 @@ function ConcertHeader({ concert, isUpcoming }: { concert: Concert; isUpcoming: 
   );
 }
 
-function ConcertLinks({
-  concert,
-  hidePoster = false,
-}: {
-  concert: Concert;
-  hidePoster?: boolean;
-}) {
-  const showPoster = Boolean(concert.posterUrl) && !hidePoster;
-
-  if (!concert.programUrl && !showPoster && !concert.pressReleaseUrl) {
+function ConcertLinks({ concert }: { concert: Concert }) {
+  if (!concert.programUrl && !concert.posterUrl && !concert.pressReleaseUrl) {
     return null;
   }
 
@@ -109,7 +98,7 @@ function ConcertLinks({
           Program
         </a>
       )}
-      {showPoster && concert.posterUrl && (
+      {concert.posterUrl && (
         <a href={concert.posterUrl} className="text-gold hover:text-charcoal">
           Poster
         </a>
@@ -131,43 +120,6 @@ export function ConcertCard({ concert, variant = "past" }: ConcertCardProps) {
       : "border-cream/15 bg-cream text-charcoal"
   }`;
   const hasProgram = Boolean(concert.program && concert.program.length > 0);
-
-  if (isUpcoming && concert.posterUrl) {
-    const flyerSrc = assetUrl(concert.posterUrl);
-
-    return (
-      <article className={cardClassName}>
-        <div className="grid md:grid-cols-[minmax(0,1fr)_340px] md:grid-rows-[auto_auto_1fr] md:gap-x-10">
-          <div className="md:col-start-1 md:row-start-1">
-            <ConcertHeader concert={concert} isUpcoming={isUpcoming} />
-          </div>
-          <a
-            href={flyerSrc}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mx-auto mt-8 block w-full max-w-sm md:col-start-2 md:row-span-3 md:row-start-1 md:mt-0 md:max-w-none md:self-start"
-          >
-            <Image
-              src={flyerSrc}
-              alt={`Flyer for ${concert.title}`}
-              width={1086}
-              height={1448}
-              sizes="(min-width: 768px) 340px, 384px"
-              className="h-auto w-full rounded border border-charcoal/15 shadow-md"
-            />
-          </a>
-          {hasProgram && (
-            <div className="md:col-start-1 md:row-start-2">
-              <ProgramList program={concert.program!} />
-            </div>
-          )}
-          <div className="md:col-start-1 md:row-start-3">
-            <ConcertLinks concert={concert} hidePoster />
-          </div>
-        </div>
-      </article>
-    );
-  }
 
   if (isUpcoming && concert.venue) {
     return (

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import { ConcertList } from "@/components/ConcertCard";
+import { ConcertSections } from "@/components/ConcertSections";
 import { HeroRow } from "@/components/HeroRow";
-import { SolidSection } from "@/components/SolidSection";
-import { getPastConcerts, getUpcomingConcerts } from "@/lib/data";
+import { buildTime } from "@/lib/buildTime";
+import { getConcerts } from "@/lib/data";
 import { createPageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
@@ -14,9 +14,6 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 export default function EventsPage() {
-  const upcoming = getUpcomingConcerts();
-  const past = getPastConcerts();
-
   return (
     <>
       <HeroRow
@@ -36,32 +33,7 @@ export default function EventsPage() {
         </p>
       </HeroRow>
 
-      <SolidSection>
-        <h2 className="prose-heading text-6xl text-gold md:text-7xl">
-          Upcoming
-        </h2>
-        <div className="mt-10">
-          <ConcertList
-            concerts={upcoming}
-            variant="upcoming"
-            emptyMessage="No upcoming concerts scheduled. Check back soon."
-          />
-        </div>
-      </SolidSection>
-
-      <SolidSection variant="dark">
-        <p className="section-label">Archive</p>
-        <h2 className="prose-heading mt-4 text-4xl text-cream md:text-5xl">
-          Past concerts
-        </h2>
-        <div className="mt-10">
-          <ConcertList
-            concerts={past}
-            variant="past"
-            emptyMessage="No past concerts listed yet."
-          />
-        </div>
-      </SolidSection>
+      <ConcertSections concerts={getConcerts()} buildTime={buildTime} />
     </>
   );
 }

@@ -13,6 +13,7 @@ import type {
   Roster,
   RosterSection,
 } from "./types";
+import { partitionConcerts } from "./concerts";
 import { assetUrl } from "./site";
 
 export function getOrganization(): Organization {
@@ -48,21 +49,11 @@ export function getConcerts(): Concert[] {
 }
 
 export function getUpcomingConcerts(now = new Date()): Concert[] {
-  return getConcerts()
-    .filter((concert) => new Date(concert.startAt) >= now)
-    .sort(
-      (a, b) =>
-        new Date(a.startAt).getTime() - new Date(b.startAt).getTime(),
-    );
+  return partitionConcerts(getConcerts(), now.getTime()).upcoming;
 }
 
 export function getPastConcerts(now = new Date()): Concert[] {
-  return getConcerts()
-    .filter((concert) => new Date(concert.startAt) < now)
-    .sort(
-      (a, b) =>
-        new Date(b.startAt).getTime() - new Date(a.startAt).getTime(),
-    );
+  return partitionConcerts(getConcerts(), now.getTime()).past;
 }
 
 export function getConcertById(id: string): Concert | undefined {
